@@ -98,6 +98,7 @@ Now that your Bastion Host has a **stable public IP**:
 ```bash
 # Connect to Bastion Host (use your allocated Elastic IP)
 ssh -i Public-EC2.pem ubuntu@<Elastic-IP>
+```
 
 # Once on Bastion, connect to the Private EC2 by its private IP
 ssh -i Public-EC2.pem ubuntu@<Private-EC2-Private-IP>
@@ -108,7 +109,7 @@ ssh -i Public-EC2.pem ubuntu@<Private-EC2-Private-IP>
 ## Security Best Practices
 - 🚫 **Disable Password Authentication**: Enforce key-based SSH.
 - 📸 **![Disable Password Authentication](screenshots/etc_ssh_sshd_config.png)**
-- 📸 **![Disable Permit Root Login and Enable PubKey Authentication](screenshots/etc_ssh_sshd_config-2.png)**
+- 📸 **![Also Enable PubKey Authentication](screenshots/etc_ssh_sshd_config-2.png)**
 - 🔒 **Restrict Security Groups**: Limit access by IP.
 - 📜 **Enable AWS CloudTrail**: Track API events.
 - 🔐 **Use IAM Roles**: Avoid static AWS credentials.
