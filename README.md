@@ -46,37 +46,42 @@ AWS-VPC-Security/
 - Set **CIDR Block** to `10.0.0.0/16`.
 - Enable **DNS Support & DNS Hostnames**.
 - Save & note the **VPC ID**.
-- 📸 **[Screenshot] VPC Created**
+- 📸 **![My Secure VPC Created](screenshots/MySecureVPC.png)**
 
 ### **Step 2: Configure Subnets**
 - Create a **Public Subnet** (`10.0.1.0/24` in `us-east-1a`).
 - Create a **Private Subnet** (`10.0.2.0/24` in `us-east-1b`).
-- 📸 **[Screenshot] Subnets Created**
+- 📸 **![Public & Private Subnets Created](screenshots/SubnetList.png)**
+- 📸 **![Public Subnet Summary](screenshots/PublicSubnet.png)**
+- 📸 **![Private Subnet Summary](screenshots/PrivateSubnet.png)**
 
 ### **Step 3: Set Up Internet Gateway & Route Tables**
 - Create **Internet Gateway**, attach to **VPC**.
 - Create **Route Table** and add **0.0.0.0/0 → Internet Gateway**.
 - Associate **Public Subnet** with **Public Route Table**.
-- 📸 **[Screenshot] Route Tables Configured**
+- 📸 **![Internet Gateway Attached](screenshots/InternetGatewayAttached.png)**
+- 📸 **![Routing Tables Updated](screenshots/RouteUpdate.png)**
 
 ### **Step 4: Security Group Rules**
 - **Bastion SG:** Allow **SSH from your IP** (`22/TCP`).
 - **Private EC2 SG:** Allow **SSH only from Bastion Host**.
-- 📸 **[Screenshot] Security Groups Configured**
+- 📸 **![Public Security Group Created](screenshots/PublicSecurityGroupCreated.png)**
+- 📸 **![Private Security Group Created](screenshots/PrivateSecurityGroupCreated.png)**
 
 ### **Step 5: Deploy Bastion & Private EC2**
 - Launch **Bastion Host** in **Public Subnet**.
 - Launch **Private EC2** in **Private Subnet**.
 - Associate Bastion Host with **Bastion SG**.
 - Associate Private EC2 with **Private EC2 SG**.
-- 📸 **[Screenshot] Instances Running**
+- 📸 **![Public - EC2 Summary](screenshots/Public-EC2Summary.png)**
+- 📸 **![Private - EC2 Summary](screenshots/Private-EC2Summary.png)**
 
 ### **Step 6: Connect to Private EC2 via Bastion**
 ```bash
 ssh -i Public-EC2.pem ubuntu@<Public-EC2-IP>
 ssh -i Public-EC2.pem ubuntu@<Private-EC2-IP>
 ```
-- 📸 **[Screenshot] SSH from Bastion to Private EC2**
+- 📸 **![Connect to Private EC2 via Bastion](screenshots/SSHPublictoPrivateSuccess.png)**
 
 ---
 
