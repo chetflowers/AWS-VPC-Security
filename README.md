@@ -63,23 +63,6 @@ AWS-VPC-Security/
 │   ├── security-hardening.md
 │   └── troubleshooting.md
 ├── screenshots/
-│   ├── ElasticIPAssociatedSuccess.png
-│   ├── ElasticIPSummary.png
-│   ├── InternetGatewayAttached.png
-│   ├── MySecureVPC.png
-│   ├── MySecureVPCCreate.png
-│   ├── PingPrivate-EC2.png
-│   ├── Private-EC2Summary.png
-│   ├── PrivateSecurityGroupCreated.png
-│   ├── PrivateSubnet.png
-│   ├── Public-EC2Summary.png
-│   ├── PublicSecurityGroupCreated.png
-│   ├── PublicSubnet.png
-│   ├── RouteUpdate.png
-│   ├── SSHLocaltoPublic.png
-│   ├── SSHPublictoPrivateSuccess.png
-│   ├── Subnets.png
-│   └── SubneetAssociationsUpdate.png
 └── LICENSE
 
 ---
